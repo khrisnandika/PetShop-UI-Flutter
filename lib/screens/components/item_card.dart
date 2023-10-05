@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pet_shop/constant.dart';
 import 'package:pet_shop/models/product.dart';
+import 'package:pet_shop/screens/details/details_screen.dart';
 
 class ItemCard extends StatelessWidget {
   final Product product;
@@ -12,36 +13,44 @@ class ItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          padding: EdgeInsets.all(kDefaultPadding/3),
-          height: 160,
-          width: 160,
-          decoration: BoxDecoration(
-            color: product.color,
-            borderRadius: BorderRadius.circular(16),
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailScreen(product: product),
+            ));
+      },
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            padding: const EdgeInsets.all(kDefaultPadding / 3),
+            height: 160,
+            width: 160,
+            decoration: BoxDecoration(
+              color: product.color,
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: Image.asset(
+              product.image,
+            ),
           ),
-          child: Image.asset(
-            product.image,
-            
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: kDefaultPadding / 4),
+            child: Text(
+              product.title,
+              style: const TextStyle(color: kTextLightColor),
+            ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: kDefaultPadding / 4),
-          child: Text(
-            product.title,
-            style: TextStyle(color: kTextLightColor),
+          Text(
+            "\$${product.price}",
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
           ),
-        ),
-        Text(
-          "\$${product.price}",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

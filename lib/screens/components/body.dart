@@ -3,6 +3,7 @@ import 'package:pet_shop/constant.dart';
 import 'package:pet_shop/models/product.dart';
 import 'package:pet_shop/screens/components/categories.dart';
 import 'package:pet_shop/screens/components/item_card.dart';
+import 'package:pet_shop/screens/details/details_screen.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});
@@ -12,7 +13,7 @@ class Body extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
+        const Padding(
           padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
           child: Text(
             "Hewan",
@@ -22,19 +23,29 @@ class Body extends StatelessWidget {
             ),
           ),
         ),
-        Categories(),
+        const Categories(),
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(kDefaultPadding, 0, kDefaultPadding, 0),
+            padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
             child: GridView.builder(
               itemCount: products.length,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 0.75,
                 crossAxisSpacing: kDefaultPadding,
               ),
-              itemBuilder: (context, index) => ItemCard(
-                product: products[index],
+              itemBuilder: (context, index) => GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            DetailScreen(product: products[index]),
+                      ));
+                },
+                child: ItemCard(
+                  product: products[index],
+                ),
               ),
             ),
           ),
