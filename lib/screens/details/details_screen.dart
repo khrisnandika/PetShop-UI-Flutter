@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pet_shop/constant.dart';
 import 'package:pet_shop/models/product.dart';
-import 'package:pet_shop/screens/components/body.dart';
 import 'package:pet_shop/screens/details/components/body.dart';
 
 class DetailScreen extends StatelessWidget {
