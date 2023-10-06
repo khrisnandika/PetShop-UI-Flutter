@@ -17,7 +17,7 @@ class ColorAndAge extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text("Color"),
+              const Text("Warna"),
               Row(
                 children: [
                   ColorDot(
@@ -36,9 +36,9 @@ class ColorAndAge extends StatelessWidget {
             text: TextSpan(
               style: const TextStyle(color: kTextColor),
               children: [
-                const TextSpan(text: "Age\n"),
+                const TextSpan(text: "Umur\n"),
                 TextSpan(
-                  text: "3 months old",
+                  text: "3 Bulan",
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),

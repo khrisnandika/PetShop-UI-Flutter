@@ -19,14 +19,14 @@ class ProductTitleWIthImage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            "Kucing Peliharaan",
+            "Hewan Peliharaan",
             style: TextStyle(
               color: Colors.white,
             ),
           ),
-          const Text(
-            "Kucing Persia",
-            style: TextStyle(
+          Text(
+            product.title,
+            style: const TextStyle(
                 color: Colors.white,
                 fontSize: 25,
                 fontWeight: FontWeight.bold),
@@ -38,10 +38,10 @@ class ProductTitleWIthImage extends StatelessWidget {
                   children: [
                     const TextSpan(text: "Price\n"),
                     TextSpan(
-                      text: "\$${product.price}",
+                      text: "Rp.${product.price}",
                       style: Theme.of(context)
                           .textTheme
-                          .headlineMedium
+                          .headlineSmall
                           ?.copyWith(
                               color: Colors.white,
                               fontWeight: FontWeight.bold),
@@ -53,9 +53,12 @@ class ProductTitleWIthImage extends StatelessWidget {
                 width: kDefaultPadding,
               ),
               Expanded(
-                child: Image.asset(
-                  product.image,
-                  height: 300,
+                child: Hero(
+                  tag: "${product.id}",
+                  child: Image.asset(
+                    product.image,
+                    height: 300,
+                  ),
                 ),
               ),
             ],

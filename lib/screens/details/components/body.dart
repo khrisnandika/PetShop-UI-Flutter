@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:pet_shop/constant.dart';
 import 'package:pet_shop/models/product.dart';
-import 'package:pet_shop/screens/details/components/cart_counter.dart';
+import 'package:pet_shop/screens/details/add_to_cart.dart';
 import 'package:pet_shop/screens/details/components/color_and_age.dart';
+import 'package:pet_shop/screens/details/components/counter_with_favbtn.dart';
 import 'package:pet_shop/screens/details/components/description.dart';
 import 'package:pet_shop/screens/details/components/product_title_with_image.dart';
 
@@ -16,6 +16,7 @@ class BodyDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return SingleChildScrollView(
+      physics: const NeverScrollableScrollPhysics(),
       child: Column(
         children: [
           SizedBox(
@@ -41,22 +42,10 @@ class BodyDetail extends StatelessWidget {
                     children: [
                       const ColorAndAge(),
                       Description(product: product),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          CartCounter(),
-                          Container(
-                            padding: EdgeInsets.all(8),
-                            height: 32,
-                            width: 32,
-                            decoration: const BoxDecoration(
-                              color: Colors.red,
-                              shape: BoxShape.circle,
-                            ),
-                            child: SvgPicture.asset("assets/icons/heart.svg"),
-                          ),
-                        ],
-                      ),
+                      const SizedBox(height: kDefaultPadding),
+                      const CounterWithFavBtn(),
+                      const SizedBox(height: kDefaultPadding),
+                      AddToCart(product: product),
                     ],
                   ),
                 ),

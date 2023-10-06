@@ -17,10 +17,10 @@ class HomeScreen extends StatelessWidget {
   AppBar buldAppBar() {
     return AppBar(
       backgroundColor: Colors.white,
-      leading: IconButton(
-        onPressed: () {},
-        icon: SvgPicture.asset("assets/icons/back.svg"),
-      ),
+      // leading: IconButton(
+      //   onPressed: () {},
+      //   icon: SvgPicture.asset("assets/icons/back.svg"),
+      // ),
       actions: [
         IconButton(
           onPressed: () {},

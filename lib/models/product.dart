@@ -19,7 +19,7 @@ List<Product> products = [
   Product(
       id: 1,
       title: "Kucing Anggora",
-      price: 234,
+      price: 500000,
       size: 12,
       description: dummyText,
       image: "assets/images/cat.png",
@@ -27,7 +27,7 @@ List<Product> products = [
   Product(
       id: 2,
       title: "Kucing Persia",
-      price: 234,
+      price: 700000,
       size: 8,
       description: dummyText,
       image: "assets/images/cat2.png",
@@ -35,7 +35,7 @@ List<Product> products = [
   Product(
       id: 3,
       title: "Anjing Pudel",
-      price: 100,
+      price: 1000000,
       size: 10,
       description: dummyText,
       image: "assets/images/dog.png",
@@ -43,7 +43,7 @@ List<Product> products = [
   Product(
       id: 4,
       title: "Anjing German",
-      price: 112,
+      price: 1500000,
       size: 11,
       description: dummyText,
       image: "assets/images/dog5.png",
@@ -51,7 +51,7 @@ List<Product> products = [
   Product(
       id: 5,
       title: "Anjing Beagle",
-      price: 231,
+      price: 2000000,
       size: 12,
       description: dummyText,
       image: "assets/images/dog3.png",
@@ -59,7 +59,7 @@ List<Product> products = [
   Product(
     id: 6,
     title: "Anjing Golden",
-    price: 123,
+    price: 2500000,
     size: 12,
     description: dummyText,
     image: "assets/images/dog4.png",
