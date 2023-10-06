@@ -16,10 +16,23 @@ class Body extends StatelessWidget {
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
           child: Text(
-            "Hewan",
+            "Hi, Krisna",
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 25,
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 5,
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+          child: Text(
+            "Temukan Hewan Peliharaan Anda",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 15,
             ),
           ),
         ),
