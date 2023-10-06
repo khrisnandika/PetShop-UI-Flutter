@@ -27,7 +27,7 @@ class BodyDetail extends StatelessWidget {
                     right: kDefaultPadding,
                   ),
                   height: 500,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(24),
@@ -36,7 +36,7 @@ class BodyDetail extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      ColorAndAge(),
+                      const ColorAndAge(),
                       Padding(
                         padding: const EdgeInsets.symmetric(
                             vertical: kDefaultPadding),

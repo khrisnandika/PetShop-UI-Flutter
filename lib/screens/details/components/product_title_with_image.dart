@@ -18,13 +18,13 @@ class ProductTitleWIthImage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          const Text(
             "Kucing Peliharaan",
             style: TextStyle(
               color: Colors.white,
             ),
           ),
-          Text(
+          const Text(
             "Kucing Persia",
             style: TextStyle(
                 color: Colors.white,
@@ -49,7 +49,7 @@ class ProductTitleWIthImage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: kDefaultPadding,
               ),
               Expanded(
