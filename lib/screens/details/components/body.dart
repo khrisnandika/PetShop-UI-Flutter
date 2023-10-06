@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:pet_shop/constant.dart';
 import 'package:pet_shop/models/product.dart';
+import 'package:pet_shop/screens/details/components/cart_counter.dart';
 import 'package:pet_shop/screens/details/components/color_and_age.dart';
+import 'package:pet_shop/screens/details/components/description.dart';
 import 'package:pet_shop/screens/details/components/product_title_with_image.dart';
 
 class BodyDetail extends StatelessWidget {
@@ -37,12 +40,22 @@ class BodyDetail extends StatelessWidget {
                   child: Column(
                     children: [
                       const ColorAndAge(),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: kDefaultPadding),
-                        child: Text(
-                          product.description,
-                        ),
+                      Description(product: product),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          CartCounter(),
+                          Container(
+                            padding: EdgeInsets.all(8),
+                            height: 32,
+                            width: 32,
+                            decoration: const BoxDecoration(
+                              color: Colors.red,
+                              shape: BoxShape.circle,
+                            ),
+                            child: SvgPicture.asset("assets/icons/heart.svg"),
+                          ),
+                        ],
                       ),
                     ],
                   ),
